@@ -1,0 +1,85 @@
+---
+title: "Letter Distributions"
+author: "jmb"
+date: "4/12/2021"
+output: html_document
+---
+
+### Purpose of this file
+- To plot the proportion distribution of both the first and last initials for all games of Initials.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+### Load packages
+```{r}
+library(ggplot2)
+```
+
+### Import data
+```{r}
+d <- read.csv('initials.csv', stringsAsFactors = TRUE)
+```
+
+### Data processing
+
+First, compute the proportion and percentage distributions for both the first and last initials.
+
+```{r}
+# Create new dataframe of just the alphabet
+d.l = data.frame('Letter' = as.factor(letters))
+# Create new dataframe of the proportion distribution of the first initial and last initial
+l1.prop <- data.frame(prop.table(table(d$first)))
+l2.prop <- data.frame(prop.table(table(d$last)))
+# Rename the columns
+names(l1.prop) <- c('Letter', 'First_Proportion')
+names(l2.prop) <- c('Letter', 'Last_Proportion')
+# Add the first-letter proportions onto the dataframe of Letters
+d.l <- merge(d.l, l1.prop, by = c('Letter'), all.x = TRUE)
+# Add the last-letter proportions onto the dataframe of Letters
+d.l <- merge(d.l, l2.prop, by = c('Letter'), all.x = TRUE)
+# For letters that have never been played, place a '0' as the proportion
+d.l$First_Proportion <- ifelse(is.na(d.l$First_Proportion) == TRUE, 0, d.l$First_Proportion)
+d.l$Last_Proportion  <- ifelse(is.na(d.l$Last_Proportion) == TRUE, 0, d.l$Last_Proportion)
+# For ease, add a Percentage variable for each letter
+d.l$First_Percentage <- d.l$First_Proportion*100
+d.l$Last_Percentage  <- d.l$Last_Proportion*100
+```
+
+### Plotting
+
+#### Plot of the distribution of the first initial!
+
+```{r}
+  ggplot(data = d.l, aes(y = First_Percentage, x = reorder(Letter, -First_Percentage))) +
+    geom_bar(stat = 'identity', aes(fill = First_Percentage)) +
+    scale_fill_gradient(low = 'red', high = 'blue') +
+    xlab('First Letter') +
+    ylab('Percentage (%)') +
+    scale_y_continuous(breaks = seq(0,10,2), limits = c(0,10)) +
+    theme_light() +
+    theme(axis.title.x = element_text(size = 15),
+          axis.text.x = element_text(size = 15),
+          axis.title.y = element_text(size = 15),
+          axis.text.y = element_text(size = 15),
+          panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+  
+```
+
+#### Plot of the distribution of the last initial!
+
+```{r}
+  ggplot(data = d.l, aes(y = Last_Percentage, x = reorder(Letter, -Last_Percentage))) +
+    geom_bar(stat = 'identity', aes(fill = Last_Percentage)) +
+    scale_fill_gradient(low = 'red', high = 'blue') +
+    xlab('Last Letter') +
+    ylab('Percentage (%)') +
+    scale_y_continuous(breaks = seq(0,10,2), limits = c(0,10)) +
+    theme_light() +
+    theme(axis.title.x = element_text(size = 15),
+          axis.text.x = element_text(size = 15),
+          axis.title.y = element_text(size = 15),
+          axis.text.y = element_text(size = 15),
+          panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+```
