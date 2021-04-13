@@ -1,10 +1,10 @@
 # initials-game
 Data, code, and analysis for the Initials Game from the Powertrip Morning Show on KFAN radio.
 
-Data updated as of Game 352 (4/9/2021).
-
 ## The data
 The data file, `initials.csv`, was manually created by me, using the history of games tracked on https://theinitialsgame.weebly.com/ Credit to the author of that site for tracking all the games!
+
+Data updated as of Game 352 (4/09/2021).
 
 ### Variables in the data
 Each row corresponds to one game of initials.
@@ -12,3 +12,10 @@ Each row corresponds to one game of initials.
 2. `first`: The first initial for the given game.
 3. `last`: The last initial for the given game.
 4. `both`: The combined initials for the given game.
+
+
+## Letter distributions
+'letter-distributions.rmd' contains the R-Markdown code used to process the data and produce the following two plots:
+
+- 'first-letter-percentage-[date].png' shows the percentage distribution of the letters used as the first initial.
+- 'last-letter-percentage-[date].png' shows the percentage distribution of the letters used as the last initial.
