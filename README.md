@@ -23,3 +23,4 @@ Percentage distribution of the letters used as the first initial.
 
 
 Percentage distribution of the letters used as the last initial.
+![alt text](https://github.com/brown-jm/initials-game/blob/main/plots/last-letter-percentage.png?raw=true)
