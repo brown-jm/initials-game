@@ -15,7 +15,7 @@ Each row corresponds to one game of initials.
 
 
 ## Letter distributions
-`letter-distributions.Rmd` contains the R-Markdown code used to process the data and produce the following two plots:
+`letter-distributions.Rmd` contains the R-Markdown code used to process the data and produce the following two plots (updated as of 4/14/2021):
 
 Percentage distribution of the letters used as the first initial.
 ![alt text](https://github.com/brown-jm/initials-game/blob/main/plots/first-letter-percentage.png?raw=true)
