@@ -4,7 +4,7 @@ Data, code, and analysis for the Initials Game from the Powertrip Morning Show o
 ## The data
 The data file, `initials.csv`, was manually created by me, using the history of games tracked on https://theinitialsgame.weebly.com/ Credit to the author of that site for tracking all the games!
 
-Data updated as of Game 352 (4/09/2021).
+Data updated as of Game 354 (4/17/2021).
 
 ### Variables in the data
 Each row corresponds to one game of initials.
