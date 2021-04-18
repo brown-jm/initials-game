@@ -52,10 +52,11 @@ d.l$Last_Percentage  <- d.l$Last_Proportion*100
 
   ### Simulation and plotting
   
-  # Function that outputs the total number of weeks before
-  #   one of the radio initials match the one of the guessed initials
-  #   in the correct order.
+
 ```{r}
+
+  # Function that outputs the total number of weeks before one of the radio initials match the one of the guessed initials in the correct order.
+
   OneLetter <- function(){  
     # Time-to-event for matching both initials
     i <- 0
