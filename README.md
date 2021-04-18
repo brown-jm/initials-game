@@ -1,5 +1,5 @@
 # initials-game
-Data, code, and analysis for the Initials Game from the Powertrip Morning Show on KFAN radio.
+Data, code, analysis, and results for the Initials Game from the Powertrip Morning Show on KFAN radio.
 
 ## The data
 The data file, `initials.csv`, was manually created by me, using the history of games tracked on https://theinitialsgame.weebly.com/ Credit to the author of that site for tracking all the games!
@@ -24,3 +24,9 @@ Percentage distribution of the letters used as the first initial.
 
 Percentage distribution of the letters used as the last initial.
 ![alt text](https://github.com/brown-jm/initials-game/blob/main/plots/last-letter-percentage.png?raw=true)
+
+## One-letter Matching
+- `one-letter-match.Rmd` contains the R-Markdown code used to process the data and produce the plot below (updated as of...)
+
+The plot shows the results from 5,000 simulations. In each simulation, the outcome is the number of games (or weeks) it takes to correctly guess the first or last initiat. This was simulated by assuming both the "caller" and Cory Cove randomly choose their initials based on the historical probability distribution of letters that are used. Thus, the following plot is true to reality to the extent that both the caller's and Cory's initial selection behavior matches this random draw.
+
