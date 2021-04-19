@@ -50,12 +50,11 @@ d.l$First_Percentage <- d.l$First_Proportion*100
 d.l$Last_Percentage  <- d.l$Last_Proportion*100
 ```
 
-  ### Simulation and plotting
-  
+### Simulation
 
 ```{r}
 
-  # Function that outputs the total number of weeks before one of the radio initials match the one of the guessed initials in the correct order.
+# Function that outputs the total number of weeks before one of the radio initials match the one of the guessed initials in the correct order.
 
   OneLetter <- function(){  
     # Time-to-event for matching both initials
@@ -81,14 +80,15 @@ d.l$Last_Percentage  <- d.l$Last_Proportion*100
   }
 ```
 
-  # Collect simulations of weeks until both sets of initials match
-```{r include = FALSE}
+### Rum simulation 5000 times and collect results
+
+```{r echo = TRUE, results = 'hide'}
 # Set a seed number to reproduce results (number taken from random.org)
 set.seed(366896971)
   d1 <- do(5000)*OneLetter()
 ```
   
-
+### Percentile calculation
 
 ```{r}
 
@@ -99,6 +99,8 @@ set.seed(366896971)
   count(d1$OneLetter > 20) / nrow(d1)  
   count(d1$OneLetter > 21) / nrow(d1)  
 ```
+
+### Plot!
   
 ```{r}
   ggplot(data = d1, aes(x = OneLetter)) +
