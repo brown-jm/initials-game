@@ -28,6 +28,6 @@ Percentage distribution of the letters used as the last initial.
 ## One-letter Matching
 `one-letter-match.Rmd` contains the R-Markdown code used to process the data and produce the plot below (updated as of 4/18/2021)
 
-The plot shows the results from 5,000 simulations. In each simulation, the outcome is the number of games (or weeks) it takes to correctly guess the first or last initial. This was simulated by assuming both the caller and Cory Cove randomly choose their initials from a distribution of letters reflecting the historical percentage of use. Thus, the following plot is true to reality to the extent that both the callers' and Cory's actual behavior mimic this random draw.
+The plot shows the results from 5,000 simulations. In each simulation, the outcome is the number of games (or weeks) it takes to correctly guess the first or last initial. This was simulated by assuming both the caller and Cory Cove randomly choose their initials from a distribution of letters reflecting the historical percentage of use. Thus, the following plot is true to reality to the extent that the behaviors of the callers and Cory mimic this random draw.
 
 ![alt text](https://github.com/brown-jm/initials-game/blob/main/plots/sim-one-letter-match.png?raw=true)
