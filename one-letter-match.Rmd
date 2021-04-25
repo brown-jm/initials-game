@@ -1,7 +1,7 @@
 ---
 title: "One-letter Match"
 author: "jmb"
-date: "4/16/2021"
+date: "4/24/2021"
 output: 
   html_document:
     keep_md: true
@@ -93,11 +93,10 @@ set.seed(366896971)
 ```{r}
 
 ## Last time one match occurred: Game 334 (i.e., Week = 0 for 334)
-## As of 4/17/2021, on Game 354 or 20 weeks
+## As of 4/24/2021, on Game 355 or 21 weeks
 
-  # Probability of being longer than the given number of weeks
-  count(d1$OneLetter > 20) / nrow(d1)  
-  count(d1$OneLetter > 21) / nrow(d1)  
+  # Probability of taking the given number of weeks or longer
+  count(d1$OneLetter >= 21) / nrow(d1)  
 ```
 
 ### Plot!
@@ -105,9 +104,9 @@ set.seed(366896971)
 ```{r}
   ggplot(data = d1, aes(x = OneLetter)) +
     geom_histogram(binwidth = 1, aes(y = ..density..), color = 'plum', fill = 'plum') +
-    geom_vline(xintercept = 20, lty = 'dashed') +
+    geom_vline(xintercept = 21, lty = 'dashed') +
     ylab('Probability Density') +
-    annotate('text', x = 32, y = 0.05, label = paste0(100*count(d1$OneLetter > 20) / nrow(d1),'% chance for 20 or more weeks'), color = 'blue') +
+    annotate('text', x = 32, y = 0.05, label = paste0(100*count(d1$OneLetter >= 21) / nrow(d1),'% chance for 21 or more weeks'), color = 'blue') +
     scale_x_continuous(breaks = c(seq(from = 0, to = max(d1$OneLetter), by = 2)), name = 'Weeks Between One-letter Matches') +
     theme_light() +
     theme(panel.grid.major = element_blank(), 

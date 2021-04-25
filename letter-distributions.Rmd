@@ -1,8 +1,10 @@
 ---
 title: "Letter Distributions"
 author: "jmb"
-date: "4/12/2021"
-output: html_document
+date: "4/24/2021"
+output: 
+  html_document:
+    keep_md: true
 ---
 
 ### Purpose of this file
@@ -64,7 +66,6 @@ d.l$Last_Percentage  <- d.l$Last_Proportion*100
           axis.title.y = element_text(size = 15),
           axis.text.y = element_text(size = 15),
           panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-  
 ```
 
 #### Plot of the distribution of the last initial!
