@@ -4,7 +4,7 @@ Data, code, analysis, and results for the Initials Game from the Powertrip Morni
 ## The data
 The data file, `initials.csv`, was manually created by me, using the history of games tracked on https://theinitialsgame.weebly.com/ Credit to the author of that site for tracking all the games!
 
-Data updated as of Game 354 (4/17/2021).
+Data updated as of Game 355 (4/24/2021).
 
 ### Variables in the data
 Each row corresponds to one game of initials.
@@ -15,7 +15,7 @@ Each row corresponds to one game of initials.
 
 
 ## Letter distributions
-`letter-distributions.Rmd` contains the R-Markdown code used to process the data and produce the following two plots (updated as of 4/17/2021):
+`letter-distributions.Rmd` contains the R-Markdown code used to process the data and produce the following two plots (updated as of 4/24/2021):
 
 Percentage distribution of the letters used as the first initial.
 ![alt text](https://github.com/brown-jm/initials-game/blob/main/plots/first-letter-percentage.png?raw=true)
