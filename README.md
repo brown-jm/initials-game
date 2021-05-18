@@ -4,7 +4,7 @@ Data, code, analysis, and results for the Initials Game from the Powertrip Morni
 ## The data
 The data file, `initials.csv`, was manually created by me, using the history of games tracked on https://theinitialsgame.weebly.com/ Credit to the author of that site for tracking all the games!
 
-Data updated as of Game 355 (4/24/2021).
+Data updated as of Game 358 (5/17/2021).
 
 ### Variables in the data
 Each row corresponds to one game of initials.
